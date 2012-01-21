@@ -8,10 +8,6 @@ module Data.Complex.Integrate (
 -- We will work with complex numbers
 import Data.Complex
 
--- | Get step between <a> and <b> given number <n> of steps
-getQuantizer :: (Fractional a) => a -> a -> Integer -> a
-getQuantizer a b n = (b - a) / fromInteger n
-
 -- | Integration of complex function using Simpson's rule
 integrate :: (Fractional v) => 
     (v -> v)   -- ^ Function to be integrated
@@ -26,3 +22,7 @@ integrate f n a b =
            f_o = sum $ map (f . (+ a) . (* h) . fromInteger) [nn | nn <- [1..(n-1)], odd nn]
            f_e = sum $ map (f . (+ a) . (* h) . fromInteger) [nn | nn <- [2..(n-2)], even nn]
 
+
+-- | Get step between <a> and <b> given number <n> of steps
+getQuantizer :: (Fractional a) => a -> a -> Integer -> a
+getQuantizer a b n = (b - a) / fromInteger n

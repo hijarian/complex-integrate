@@ -21,6 +21,7 @@ integrate f n a b =
            h = getQuantizer a b n
            f_o = sum $ map (f . (+ a) . (* h) . fromInteger) [nn | nn <- [1..(n-1)], odd nn]
            f_e = sum $ map (f . (+ a) . (* h) . fromInteger) [nn | nn <- [2..(n-2)], even nn]
+-- Yes, I know that function and data in maps should be refactored out, but every time I'm doing this, I am became stunned, because the integrate itself is losing clarity.
 
 
 -- | Get step between <a> and <b> given number <n> of steps

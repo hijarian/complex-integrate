@@ -7,7 +7,7 @@ Name:                complex-integrate
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             1.0.0
 
 -- A short (one-line) description of the package.
 Synopsis:            A simple integration function to integrate a complex-valued complex functions 
@@ -38,6 +38,8 @@ Maintainer:          hijarian@gmail.com
 Category:            Math
 
 Build-type:          Simple
+
+Homepage: https://github.com/hijarian/complex-integrate
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
